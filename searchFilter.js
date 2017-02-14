@@ -43,12 +43,16 @@
 		}
 	}
 	
-	onmessage = function (event) {
-		window.console.log('event received in webworker: ' + event.data);
-		if (event.data.text !== null || event.data.text !== '') {
-			queryText = event.data.text;
+	return {
+
+		onmessage: function (event) {
+			window.console.log('event received in webworker: ' + event.data);
+			if (event.data.text !== null || event.data.text !== '') {
+				queryText = event.data.text;
+			}
+			searchFilter(event.data.list);
 		}
-		searchFilter(event.data.list);
+
 	};
 
 }());
