@@ -29,11 +29,13 @@
 
 		var filteredArray = [], regExp;
 
-		for (var i=0; i < searchArray.length; i++) {
-			
-			regExp = new RegExp(queryText.toUnicodeRegex(), 'ig');
-			if (searchArray[i].trim().match(regExp)) {
-				filteredArray.push(searchArray[i]);
+		if (searchArray && searchArray.length > 0) {
+			for (var i=0; i < searchArray.length; i++) {
+				
+				regExp = new RegExp(queryText.toUnicodeRegex(), 'ig');
+				if (searchArray[i].trim().match(regExp)) {
+					filteredArray.push(searchArray[i]);
+				}
 			}
 		}
 
